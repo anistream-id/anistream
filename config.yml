@@ -1,0 +1,21 @@
+backend:
+  name: git-gateway
+  branch: main # ganti ke 'master' kalo branch kamu namanya master
+
+media_folder: "images/uploads" # tempat gambar yg di-upload lewat CMS
+public_folder: "/images/uploads"
+
+collections:
+    - name: "anime"
+    label: "Daftar Anime"
+    folder: "content/anime"
+    create: true
+    slug: "{{slug}}"
+    fields:
+            - { label: "Judul Anime", name: "title", widget: "string" }
+            - { label: "Slug URL", name: "slug", widget: "string", hint: "contoh: solo-leveling-season-2" }
+            - { label: "Gambar Cover", name: "thumbnail", widget: "image" }
+            - { label: "Rating", name: "rating", widget: "number", value_type: "float", min: 1, max: 10, step: 0.1 }
+            - { label: "Sinopsis", name: "description", widget: "text" }
+            - { label: "Link Bstation", name: "bstation_url", widget: "string" }
+            - { label: "Review Lengkap", name: "body", widget: "markdown" }

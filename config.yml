@@ -1,0 +1,22 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "img"
+public_folder: "/img"
+
+collections:
+    - name: "anime"
+    label: "Review Anime"
+    folder: "content/anime"
+    create: true
+    slug: "{{slug}}"
+    fields:
+            - {label: "Judul Anime", name: "title", widget: "string"}
+            - {label: "Tanggal Publish", name: "date", widget: "datetime"}
+            - {label: "Genre", name: "genre", widget: "string", hint: "Contoh: Action, Comedy, Supernatural"}
+            - {label: "Rating", name: "rating", widget: "number", value_type: "float", min: 1, max: 5, step: 0.1, default: 4.5}
+            - {label: "Gambar Poster", name: "image", widget: "image"}
+            - {label: "Sinopsis Singkat", name: "description", widget: "text"}
+            - {label: "Link Nonton Legal Bstation", name: "watch_link", widget: "string"}
+            - {label: "Isi Review Lengkap", name: "body", widget: "markdown", hint: "Tulis pake format markdown. ## buat judul, **tebal**, *miring*"}
